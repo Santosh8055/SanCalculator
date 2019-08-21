@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
+
 import { HomeComponent } from './home/home.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'calculator', component: CalculatorComponent }
+  { path: 'calculator', component: CalculatorComponent, canActivate: [AngularFireAuthGuard] }
 ];
 
 @NgModule({

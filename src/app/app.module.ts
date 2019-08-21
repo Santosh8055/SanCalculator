@@ -15,6 +15,12 @@ import {
   MatTableModule,
   MatDividerModule
 } from '@angular/material';
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
+import { environment } from '../environments/environment';
+
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { CalculatorComponent } from './calculator/calculator.component';
@@ -26,6 +32,9 @@ import { CalculatorComponent } from './calculator/calculator.component';
     HttpClientModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireAuthGuardModule,
     MatToolbarModule,
     MatMenuModule,
     MatIconModule,
